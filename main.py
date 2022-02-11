@@ -1,26 +1,40 @@
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
-from ui_poster import Ui_Form
+from nav import Nav
 
 class MainWin(QWidget):
   def __init__(self):
     super().__init__()
-    ui = Ui_Form()
-    ui.setupUi(self)
-    tree = QStandardItemModel()
-    item = QStandardItem('text')
-    item2 = QStandardItem('text2')
-    item.setChild(1, item2)
-    tree.setItem(0, item)
-    ui.treeView.setModel(tree)
+    self.setMinimumSize(QSize(800, 600))
+    
+    # self.splitter = QSplitter(self)
+    # self.splitter.setObjectName(u"splitter")
+    # self.splitter.setOrientation(Qt.Horizontal)
+    # self.splitter.setHandleWidth(10)
+    # self.splitter.setChildrenCollapsible(False)
 
-    header = QStandardItemModel(1, 3)
-    header.setHorizontalHeaderItem(0, QStandardItem('key'))
-    header.setHorizontalHeaderItem(1, QStandardItem('value'))
-    header.setHorizontalHeaderItem(2, QStandardItem('description'))
-    ui.header_tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-    ui.header_tableView.setModel(header)
+
+    # self.nav = Nav(self.splitter)
+    # self.btn = QPushButton(self.splitter)
+    # self.btn2 = QPushButton(self.splitter)
+
+    # sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+    # sizePolicy.setHorizontalStretch(0)
+    # sizePolicy.setVerticalStretch(0)
+    # sizePolicy.setHeightForWidth(self.sizePolicy().hasHeightForWidth())
+    # self.setSizePolicy(sizePolicy)
+    # self.setSizeIncrement(QSize(100, 0))
+    # self.setBaseSize(QSize(10, 20))
+    # self.setLayoutDirection(Qt.LeftToRight)
+
+    self.verticalLayout = QVBoxLayout(self)
+    self.verticalLayout.setObjectName(u"verticalLayout")
+    self.verticalLayout.addChildWidget(QPushButton("1"))
+    self.verticalLayout.addChildWidget(QPushButton("12"))
+    self.verticalLayout.setContentsMargins(QMargins(0,0,0,0))
+    self.setContentsMargins(QMargins(0,0,0,0))
+    # self.verticalLayout.addChildWidget(self.splitter)
 
 
 
