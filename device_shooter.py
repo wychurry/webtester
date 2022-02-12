@@ -1,10 +1,13 @@
 import argparse
-from encodings import utf_8
 import socket
 import threading
 import selectors
 import time
 import hashlib
+
+# 上报cpu/mem/disk
+# 完成server端事件存储
+# 完成线程池控制
 
 
 SHOTOR_ID = '123123'
